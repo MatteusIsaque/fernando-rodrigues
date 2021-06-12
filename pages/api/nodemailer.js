@@ -17,7 +17,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: `formularioisaquesestudios@gmail.com`,
-  to: 'matteus.isaque28@gmail.com',
+  to: 'contato@fernandorodrigues.com.br',
   subject: 'Email recebido pela campanha',
   text:
    `

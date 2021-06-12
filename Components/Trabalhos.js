@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Style from './../styles/Home.module.css'
 
-import Microfone from './../img/Locutor.png'
+import Microfone from './../img/locutor.png'
 import Apresentador from './../img/apresentador.png'
 import Televisão from './../img/television-150x150.png'
 

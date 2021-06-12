@@ -10,18 +10,14 @@ import axios from 'axios'
 
 export default function Form() {
 
-    const [Nome, setNome] = useState()
-    const [Numero, setNumero] = useState()
-    const [Email, setEmail] = useState()
-    const [Mensagem, setMensagem] = useState()
+    const [Nome, setNome] = useState("")
+    const [Numero, setNumero] = useState("")
+    const [Email, setEmail] = useState("")
+    const [Mensagem, setMensagem] = useState("")
 
     async function enviarItem(event) {
 
         event.preventDefault()
-
-        if(Email === undefined) {
-            setEmail("formularioisaquesestudios@gmail.com")
-        }
 
         const data = {
             Nome,

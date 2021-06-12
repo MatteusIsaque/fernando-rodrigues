@@ -10,15 +10,15 @@ var transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   auth: {
     user: `${process.env.USERMAIL}`,
-    pass: `${process.env.PASSMAIL}`
+    pass: `${process.env.PASSMAIL}`,
+
   },
 });
 
 var mailOptions = {
-  from: "formularioisaquesestudios@gmail.com",
+  from: `formularioisaquesestudios@gmail.com`,
   to: 'matteus.isaque28@gmail.com',
   subject: 'Email recebido pela campanha',
-  replyTo:`${Email}`,
   text:
    `
   Olá esse email chegou do site:

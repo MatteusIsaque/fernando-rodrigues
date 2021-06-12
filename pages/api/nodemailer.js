@@ -1,15 +1,9 @@
+
 var nodemailer = require('nodemailer');
 
 export default function receber(req, res){
 
-const {Nome, Numero, Mensagem} = req.body
-
-
-if(!Nome || !Numero || !Mensagem){
-  res.status(400).json({
-    mensage:"dados não preenchido"
-  })
-}
+const {Nome, Numero, Email, Mensagem} = req.body
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -17,19 +11,24 @@ var transporter = nodemailer.createTransport({
   auth: {
     user: `${process.env.USERMAIL}`,
     pass: `${process.env.PASSMAIL}`
-  }
+  },
 });
 
 var mailOptions = {
-  from: 'formularioisaquesestudios@gmail.com',
-  to: 'formularioisaquesestudios@gmail.com',
+  from: "formularioisaquesestudios@gmail.com",
+  to: 'matteus.isaque28@gmail.com',
   subject: 'Email recebido pela campanha',
+  replyTo:`${Email}`,
   text:
    `
   Olá esse email chegou do site:
   Nome: ${Nome}
-  Numero: ${Numero}
+  Número: ${Numero}
   Mensagem: ${Mensagem}
+  Email: ${Email}
+
+  Caso algum campo esteja com valor undefined é porque o cliente escolheu não passar essa informação.
+  Os Campos nome e numero são obrigatorios.
   `
 };
 

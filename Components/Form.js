@@ -13,15 +13,21 @@ export default function Form() {
     const [Nome, setNome] = useState()
     const [Numero, setNumero] = useState()
     const [Email, setEmail] = useState()
+    const [Mensagem, setMensagem] = useState()
 
     async function enviarItem(event) {
 
         event.preventDefault()
 
+        if(Email === undefined) {
+            setEmail("formularioisaquesestudios@gmail.com")
+        }
+
         const data = {
             Nome,
             Numero,
-            Email
+            Email,
+            Mensagem
         }
 
         try {
@@ -36,7 +42,8 @@ export default function Form() {
             <form onSubmit={enviarItem}>
                 <input placeholder="Nome" value={Nome} onChange={(e) => { setNome(e.target.value) }} required/>
                 <input placeholder="Numero" value={Numero} onChange={(e) => { setNumero(e.target.value) }} required/>
-                <textarea placeholder="Nome" value={Email} onChange={(e) => { setEmail(e.target.value) }} />
+                <input placeholder="Email" value={Email} onChange={(e) => { setEmail(e.target.value) }}/>
+                <textarea placeholder="Mensagem" value={Mensagem} onChange={(e) => { setMensagem(e.target.value) }} />
                 <button type="submit" >Enviar Mensagem</button>
             </form>
 

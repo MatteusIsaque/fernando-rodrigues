@@ -17,8 +17,6 @@ export default function Form() {
 
     async function enviarItem(event) {
 
-        event.preventDefault()
-
         const data = {
             Nome,
             Numero,

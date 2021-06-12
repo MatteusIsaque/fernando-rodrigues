@@ -7,6 +7,7 @@ import Compilação from '../Components/Compilaçao'
 import Trabalhos from './../Components/Trabalhos'
 import FormSection from './../Components/Form'
 import Rodape from './../Components/creditos'
+import ButtonZap from './../Components/buttonZap'
 
 export default function Home() {
   return (
@@ -29,7 +30,8 @@ export default function Home() {
       </main>
 
       <footer>
-    < Rodape />
+        < ButtonZap />
+        < Rodape />
       </footer>
     </div>
   )

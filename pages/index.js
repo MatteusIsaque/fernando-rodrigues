@@ -8,6 +8,7 @@ import Trabalhos from './../Components/Trabalhos'
 import FormSection from './../Components/Form'
 import Rodape from './../Components/creditos'
 import ButtonZap from './../Components/buttonZap'
+import Popup from '../Components/popup'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <footer>
         < ButtonZap />
         < Rodape />
+        <Popup />
       </footer>
     </div>
   )
